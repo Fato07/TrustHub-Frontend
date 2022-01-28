@@ -24,13 +24,13 @@ const DevicesTable = () => {
                 <Button content="Edit" />
                 <Button.Or />
                 <Button
-                  content="Edit"
+                  content="Delete"
                   label={{ content: "Policy" }}
                   labelPosition="right"
                 />
               </Button.Group>
             </Table.Cell>
-            <Table.Cell negative>1 Security Thread</Table.Cell>
+            <Table.Cell negative>1 Security Threat</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell positive>
@@ -41,7 +41,7 @@ const DevicesTable = () => {
                 <Button content="Edit" />
                 <Button.Or />
                 <Button
-                  content="Edit"
+                  content="Delete"
                   label={{ content: "Policy" }}
                   labelPosition="right"
                 />
@@ -58,7 +58,7 @@ const DevicesTable = () => {
                 <Button content="Edit" />
                 <Button.Or />
                 <Button
-                  content="Edit"
+                  content="Delete"
                   label={{ content: "Policy" }}
                   labelPosition="right"
                 />
@@ -75,7 +75,7 @@ const DevicesTable = () => {
                 <Button content="Edit" />
                 <Button.Or />
                 <Button
-                  content="Edit"
+                  content="Delete"
                   label={{ content: "Policy" }}
                   labelPosition="right"
                 />
