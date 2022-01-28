@@ -5,11 +5,18 @@ import {
   Dropdown,
   Grid,
   Header,
+  Icon,
   Image,
   List,
   Menu,
+  MenuItem,
+  Search,
   Segment,
 } from "semantic-ui-react";
+import DevicesTable from "./DevicesTable";
+import Footer from "./Footer";
+import devices from "./assets/devicesIcon.jpeg";
+import groups from "./assets/groupsIcon.jpeg";
 
 const FixedMenuLayout = () => (
   <div>
@@ -17,66 +24,33 @@ const FixedMenuLayout = () => (
       <Container>
         <Menu.Item as="a" header>
           <Image size="mini" src="/logo.png" style={{ marginRight: "1.5em" }} />
-          Project Name
+          Trust Hub
         </Menu.Item>
-        <Menu.Item as="a">Home</Menu.Item>
-
-        <Dropdown item simple text="Dropdown">
-          <Dropdown.Menu>
-            <Dropdown.Item>List Item</Dropdown.Item>
-            <Dropdown.Item>List Item</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Header>Header Item</Dropdown.Header>
-            <Dropdown.Item>
-              <i className="dropdown icon" />
-              <span className="text">Submenu</span>
-              <Dropdown.Menu>
-                <Dropdown.Item>List Item</Dropdown.Item>
-                <Dropdown.Item>List Item</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown.Item>
-            <Dropdown.Item>List Item</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <MenuItem>
+          <Search placeholder="Search..." />
+        </MenuItem>
+        <Menu.Item>
+          <Icon name="bell" />
+        </Menu.Item>
       </Container>
     </Menu>
 
     <Container text style={{ marginTop: "7em" }}>
-      <Header as="h1">Semantic UI React Fixed Template</Header>
-      <p>This is a basic fixed menu template using fixed size containers.</p>
-      <p>
-        A text container is used for the main container, which is useful for
-        single column layouts.
-      </p>
+      <Header as="h1">Trust Hub Policy as a service (PAAS)</Header>
 
-      <Image
-        src="/images/wireframe/media-paragraph.png"
-        style={{ marginTop: "2em" }}
-      />
-      <Image
-        src="/images/wireframe/paragraph.png"
-        style={{ marginTop: "2em" }}
-      />
-      <Image
-        src="/images/wireframe/paragraph.png"
-        style={{ marginTop: "2em" }}
-      />
-      <Image
-        src="/images/wireframe/paragraph.png"
-        style={{ marginTop: "2em" }}
-      />
-      <Image
-        src="/images/wireframe/paragraph.png"
-        style={{ marginTop: "2em" }}
-      />
-      <Image
-        src="/images/wireframe/paragraph.png"
-        style={{ marginTop: "2em" }}
-      />
-      <Image
-        src="/images/wireframe/paragraph.png"
-        style={{ marginTop: "2em" }}
-      />
+      <Image.Group centered size="tiny">
+        <Image centered src={devices} style={{ marginLeft: "25%" }} />
+        <Image src={groups} style={{ float: "left", marginRight: "25%" }} />
+      </Image.Group>
+
+      <Divider horizontal>
+        <Header as="h4">
+          <Icon name="bar chart" />
+          Specifications
+        </Header>
+      </Divider>
+
+      <DevicesTable />
     </Container>
 
     <Segment
@@ -84,61 +58,7 @@ const FixedMenuLayout = () => (
       vertical
       style={{ margin: "5em 0em 0em", padding: "5em 0em" }}
     >
-      <Container textAlign="center">
-        <Grid divided inverted stackable>
-          <Grid.Column width={3}>
-            <Header inverted as="h4" content="Group 1" />
-            <List link inverted>
-              <List.Item as="a">Link One</List.Item>
-              <List.Item as="a">Link Two</List.Item>
-              <List.Item as="a">Link Three</List.Item>
-              <List.Item as="a">Link Four</List.Item>
-            </List>
-          </Grid.Column>
-          <Grid.Column width={3}>
-            <Header inverted as="h4" content="Group 2" />
-            <List link inverted>
-              <List.Item as="a">Link One</List.Item>
-              <List.Item as="a">Link Two</List.Item>
-              <List.Item as="a">Link Three</List.Item>
-              <List.Item as="a">Link Four</List.Item>
-            </List>
-          </Grid.Column>
-          <Grid.Column width={3}>
-            <Header inverted as="h4" content="Group 3" />
-            <List link inverted>
-              <List.Item as="a">Link One</List.Item>
-              <List.Item as="a">Link Two</List.Item>
-              <List.Item as="a">Link Three</List.Item>
-              <List.Item as="a">Link Four</List.Item>
-            </List>
-          </Grid.Column>
-          <Grid.Column width={7}>
-            <Header inverted as="h4" content="Footer Header" />
-            <p>
-              Extra space for a call to action inside the footer that could help
-              re-engage users.
-            </p>
-          </Grid.Column>
-        </Grid>
-
-        <Divider inverted section />
-        <Image centered size="mini" src="/logo.png" />
-        <List horizontal inverted divided link size="small">
-          <List.Item as="a" href="#">
-            Site Map
-          </List.Item>
-          <List.Item as="a" href="#">
-            Contact Us
-          </List.Item>
-          <List.Item as="a" href="#">
-            Terms and Conditions
-          </List.Item>
-          <List.Item as="a" href="#">
-            Privacy Policy
-          </List.Item>
-        </List>
-      </Container>
+      <Footer />
     </Segment>
   </div>
 );
